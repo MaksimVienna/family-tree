@@ -8,9 +8,8 @@ fetch("family.json")
         connectors: { type: "step" },
         node: { HTMLclass: "person-node" }
       },
-      nodeStructure: buildTree(data, 1)
+      nodeStructure: buildTree(data, 0) // start from root id=0
     };
-
     new Treant(config);
   });
 
@@ -21,8 +20,7 @@ function buildTree(data, id) {
   return {
     text: { name: person.name },
     image: person.photo,
-    HTMLid: `person-${person.id}`,
     link: { href: `profile.html?id=${person.id}` },
-    children: person.children.map(childId => buildTree(data, childId))
+    children: (person.children || []).map(childId => buildTree(data, childId))
   };
 }
