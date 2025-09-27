@@ -1,18 +1,32 @@
 [
   {
+    "id": 0,
+    "name": "Family Root",   // placeholder root
+    "photo": "",             // optional, can be empty
+    "children": [1, 2]
+  },
+  {
     "id": 1,
     "name": "Sigma",
     "photo": "images/cat.jpg",
-    "bio": "Born in 2000?, loves fishing and jazz.",
-    "videos": ["videos/john1.mp4"],
-    "children": [2]
+    "children": [3, 4]       // Sigma + Fridge’s children
   },
   {
     "id": 2,
     "name": "Fridge",
     "photo": "images/fridge.jpg",
-    "bio": "Born in 1991, loves cold.",
-    "videos": [],
+    "children": [3, 4]       // same children, so they appear below parents
+  },
+  {
+    "id": 3,
+    "name": "Child 1",
+    "photo": "images/child1.jpg",
+    "children": []
+  },
+  {
+    "id": 4,
+    "name": "Child 2",
+    "photo": "images/child2.jpg",
     "children": []
   }
 ]
